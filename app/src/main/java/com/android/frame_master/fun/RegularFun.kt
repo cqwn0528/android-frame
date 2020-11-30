@@ -1,16 +1,10 @@
 package com.android.frame_master.`fun`
 
-import java.util.*
 import java.util.regex.Pattern
 
 object RegularFun {
 
-    /**
-     * 密码规则正则
-     *
-     * @param password
-     * @return
-     */
+    //密码规则正则
     fun checkPassword(password: String): Boolean {
         // 数字与字母 8-20
         // Pattern Password_Pattern = Pattern.compile("^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$");
@@ -20,36 +14,22 @@ object RegularFun {
         return matcher.matches()
     }
 
-    /**
-     * 手机号
-     *
-     * @param mobiles
-     * @return
-     */
-    fun isMobileNumber(mobiles: String): Boolean {
+    //手机号正则
+    fun isMobileNum(mobile: String): Boolean {
         val phonePattern =
             Pattern.compile("^1(3([0-35-9]\\d|4[1-8])|4[14-9]\\d|5([0125689]\\d|7[1-79])|66\\d|7[2-35-8]\\d|8\\d{2}|9[13589]\\d)\\d{7}$")
-        val matcher = phonePattern.matcher(mobiles)
+        val matcher = phonePattern.matcher(mobile)
         return matcher.matches()
     }
 
 
-    /**
-     * 身份证号校验
-     *
-     * @param iDNumber
-     * @return
-     */
+    //身份证正则
     fun isIdCardNum(idNumber: String): Boolean {
-        if (idNumber == "") {
-            return false
-        }
         // 定义判别用户身份证号的正则表达式（15位或者18位，最后一位可以为字母）
         val idNumberPattern = Pattern.compile(
             "(^[1-9]\\d{5}(18|19|20)\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$)|" +
                     "(^[1-9]\\d{5}\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}$)"
         )
-
         val matcher = idNumberPattern.matcher(idNumber)
         val matches = matcher.matches()
         //假设18位身份证号码:41000119910101123X  410001 19910101 123X

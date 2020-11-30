@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <string name="pls_enter_username">请输入用户名</string>
+    <string name="pls_enter_password">请输入密码</string>
+    <string name="pls_enter_phone_num">请输入手机号</string>
+    <string name="pls_enter_identify_code">请输入验证码</string>
 </resources>

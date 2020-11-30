@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.android.frame_master.`fun`.RegularFun
 import com.android.frame_master.retrofit.HttpUtil
 import com.android.frame_master.`fun`.TimerFun
 import kotlinx.android.synthetic.main.activity_main.*
