@@ -5,7 +5,6 @@ import android.text.method.PasswordTransformationMethod
 import android.text.method.TransformationMethod
 import android.widget.EditText
 
-
 /**
  * 控制密码显示隐藏
  */
