@@ -1,5 +1,5 @@
 package com.android.frame_master.net
 
-class HttpUrl {
-    val baseUrl = ""
+object HttpUrl {
+    const val hostUrl = ""
 }

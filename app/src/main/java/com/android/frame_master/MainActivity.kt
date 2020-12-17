@@ -6,7 +6,7 @@ import com.android.frame_master.`fun`.TimerFun
 import com.android.frame_master.base.BasicActivity
 import com.android.frame_master.bean.UserBean
 import com.android.frame_master.net.HttpUtil
-import com.android.frame_master.net.HttpCallback
+import com.android.frame_master.net.http.HttpCallback
 import com.android.frame_master.util.loadPic
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -35,21 +35,18 @@ class MainActivity : BasicActivity() {
         }
 
         btn2.setOnClickListener {
-            HttpUtil.instance.get(
-                "https://www.baidu.com",
-                object : HttpCallback<UserBean> {
-                    override fun onSuccess(response: UserBean) {
-                    }
+            HttpUtil.getRequest("https://www.baidu.com", object : HttpCallback<UserBean>() {
+                override fun onSuccess(response: UserBean) {
+                }
 
-                    override fun onError(response: String) {
-                    }
+                override fun onError(msg: String) {
 
-                    override fun onFail() {
-                    }
+                }
 
-                },
-                UserBean::class.java
-            )
+                override fun onFail() {
+
+                }
+            }, UserBean::class.java)
         }
     }
 }
