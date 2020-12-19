@@ -1,4 +1,4 @@
-package com.android.frame_master.db
+package com.android.frame_master.data.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

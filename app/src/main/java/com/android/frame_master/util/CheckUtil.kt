@@ -1,8 +1,8 @@
 package com.android.frame_master.util
 
 import android.widget.EditText
-import com.android.frame_master.`fun`.RegularFun
-import com.android.frame_master.`fun`.StringFun
+import com.android.frame_master.data.`fun`.RegularFun
+import com.android.frame_master.data.`fun`.StringFun
 
 /**
  * 校验EdtText 是否为空 true为空 false非空

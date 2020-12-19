@@ -26,4 +26,11 @@
         android:layout_height="100dp"
         android:background="@mipmap/ic_launcher" />
 
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@mipmap/ic_launcher"
+        android:text="测试文字" />
+
 </LinearLayout>

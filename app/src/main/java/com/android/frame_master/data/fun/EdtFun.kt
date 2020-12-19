@@ -1,4 +1,4 @@
-package com.android.frame_master.`fun`
+package com.android.frame_master.data.`fun`
 
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod

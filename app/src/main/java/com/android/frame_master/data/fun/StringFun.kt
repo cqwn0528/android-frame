@@ -1,4 +1,4 @@
-package com.android.frame_master.`fun`
+package com.android.frame_master.data.`fun`
 
 object StringFun {
     //校验字符串是否为空

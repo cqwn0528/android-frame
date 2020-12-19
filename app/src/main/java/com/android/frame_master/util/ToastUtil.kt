@@ -1,6 +1,6 @@
 package com.android.frame_master.util
 
-import com.android.frame_master.`fun`.ToastFun
+import com.android.frame_master.data.`fun`.ToastFun
 
 /**
  * ToastUtils toast 弹框方法

@@ -1,22 +1,21 @@
-package com.android.frame_master.net.http
+package com.android.frame_master.data.net.http
 
-import android.util.Log
+import android.os.Handler
+import android.os.Looper
 import com.android.frame_master.bean.BaseBean
-import com.android.frame_master.net.HttpUrl
+import com.android.frame_master.data.net.HttpUrl
 import com.google.gson.Gson
 import okhttp3.*
 import okio.IOException
 
 object HttpRequest {
+
+    val mHttpHandle = Handler(Looper.getMainLooper())
+
     /**
      * 发送get 请求
      */
-    fun <T : BaseBean> get(
-        url: String,
-        httpCallback: HttpCallback<T>,
-        clazz: Class<T>
-    ) {
-
+    fun <T : BaseBean> get(url: String, httpCallback: HttpCallback<T>, clazz: Class<T>) {
         HttpIClient.okHttpClient.newCall(
             HttpIClient.requestBuild.get().url(HttpUrl.hostUrl + url).build()
         )
@@ -27,31 +26,31 @@ object HttpRequest {
                 }
 
                 override fun onResponse(call: Call, response: Response) {
-                    response.use {
-                        if (response.isSuccessful) {
-                            when (response.code) {
-                                200 -> {
-                                    /* val bean =
-                                         Gson().fromJson(response.body!!.string(), clazz)
-                                     httpCallback.onSuccess(bean)*/
+                    mHttpHandle.post {
+                        response.use {
+                            if (response.isSuccessful) {
 
-                                    Log.e("我是", "200")
+                                when (response.code) {
+                                    200 -> {
+                                        httpCallback.onSuccess(
+                                            Gson().fromJson(
+                                                response.body!!.string(),
+                                                clazz
+                                            )
+                                        )
+                                    }
+                                    201 -> {
+                                    }
+                                    400 -> {
+                                    }
+                                    401 -> {
+                                    }
+                                    else -> {
+                                    }
                                 }
-                                201 -> {
-                                    Log.e("我是", "201")
-                                }
-                                400 -> {
-                                    Log.e("我是", "400")
-                                }
-                                401 -> {
-                                    Log.e("我是", "401")
-                                }
-                                else -> {
-                                    Log.e("我是", "未知错误")
-                                }
+                            } else {
+                                httpCallback.onError(response.message)
                             }
-                        } else {
-                            httpCallback.onError(response.message)
                         }
                     }
                 }
@@ -93,9 +92,12 @@ object HttpRequest {
                         if (response.isSuccessful) {
                             when (response.code) {
                                 200 -> {
-                                    val bean =
-                                        Gson().fromJson(response.body!!.string(), clazz)
-                                    httpCallback.onSuccess(bean)
+                                    httpCallback.onSuccess(
+                                        Gson().fromJson(
+                                            response.body!!.string(),
+                                            clazz
+                                        )
+                                    )
                                 }
                                 201 -> {
 

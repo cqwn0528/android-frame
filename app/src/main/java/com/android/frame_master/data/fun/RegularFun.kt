@@ -1,4 +1,4 @@
-package com.android.frame_master.`fun`
+package com.android.frame_master.data.`fun`
 
 import java.util.regex.Pattern
 

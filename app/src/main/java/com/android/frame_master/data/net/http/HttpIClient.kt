@@ -1,4 +1,4 @@
-package com.android.frame_master.net.http
+package com.android.frame_master.data.net.http
 
 import okhttp3.*
 import java.util.concurrent.TimeUnit

@@ -3,8 +3,8 @@ package com.android.frame_master.util
 import android.widget.EditText
 import android.widget.ImageView
 import com.android.frame_master.R
-import com.android.frame_master.`fun`.EdtFun
-import com.android.frame_master.`fun`.PicFun
+import com.android.frame_master.data.`fun`.EdtFun
+import com.android.frame_master.data.`fun`.PicFun
 
 /**
  * Edit 明文/密文 显示密码 TODO 需要配置图片ID
