@@ -1,4 +1,6 @@
 package com.android.frame_master.bean;
 
-public class UserBean extends BaseBean{
+import com.frame.basic_library.base.basic.BasicBean;
+
+public class UserBean extends BasicBean {
 }

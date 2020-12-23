@@ -1,7 +1,7 @@
 package com.android.frame_master.user.view
 
 import com.android.frame_master.R
-import com.android.frame_master.base.BaseMvpActivity
+import com.frame.basic_library.base.mvp.BaseMvpActivity
 import com.android.frame_master.user.contract.TextContract
 import com.android.frame_master.user.presenter.TextPresenter
 import kotlinx.android.synthetic.main.activity_text.*
@@ -10,12 +10,12 @@ class TextActivity : BaseMvpActivity<TextPresenter>(), TextContract.View {
 
     override fun setLayoutId(): Int = R.layout.activity_text
 
+
+    override fun initView() {}
+
     override fun initData() {
         mPresenter = TextPresenter()
         mPresenter.attachView(this)
-    }
-
-    override fun initView() {
     }
 
     override fun initListener() {
@@ -25,10 +25,8 @@ class TextActivity : BaseMvpActivity<TextPresenter>(), TextContract.View {
     }
 
     override fun showLoading() {
-
     }
 
     override fun hideLoading() {
     }
-
 }

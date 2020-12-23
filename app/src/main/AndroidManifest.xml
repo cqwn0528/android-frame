@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
+        <activity android:name="com.frame.basic_library.base.mvp.BaseMvpActivity" />
     </application>
 
 </manifest>

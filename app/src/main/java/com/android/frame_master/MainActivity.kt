@@ -2,13 +2,10 @@ package com.android.frame_master
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
-import com.android.frame_master.base.BasicActivity
 import com.android.frame_master.bean.UserBean
-import com.android.frame_master.data.`fun`.TimerFun
-import com.android.frame_master.data.net.HttpUtil
-import com.android.frame_master.data.net.http.HttpCallback
-import com.android.frame_master.util.loadPic
+import com.android.frame_master.util.GlideUtil
+import com.android.frame_master.util.HttpUtil
+import com.frame.basic_library.data.net.HttpCallback
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : Activity() {
@@ -18,21 +15,13 @@ class MainActivity : Activity() {
 
         setContentView(R.layout.activity_main)
 
-        loadPic(
+        GlideUtil.loadPic(
             "https://pics6.baidu.com/feed/03087bf40ad162d9bb58337aabe817eb8b13cde5.png?token=802921089c14142f5e1f40864f25ac59&s=90B75D904A0372C0059F915D030090A2",
             img1
         )
 
         btn1.setOnClickListener {
-            TimerFun.startTiming(object : TimerFun.TimerInterface {
-                override fun timing(time: Int) {
-                    Log.e("开始倒计时", "" + time)
-                }
 
-                override fun timeEnds() {
-                    Log.e("结束倒计时", "哈哈")
-                }
-            })
         }
 
         btn2.setOnClickListener {

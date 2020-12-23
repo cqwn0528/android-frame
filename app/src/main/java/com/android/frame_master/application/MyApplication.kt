@@ -1,6 +1,6 @@
 package com.android.frame_master.application
 
-import com.android.frame_master.base.BasicApplication
+import com.frame.basic_library.base.basic.BasicApplication
 import kotlin.properties.Delegates
 
 class MyApplication : BasicApplication() {

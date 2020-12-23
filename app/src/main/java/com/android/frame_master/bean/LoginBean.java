@@ -2,24 +2,7 @@ package com.android.frame_master.bean;
 
 import java.util.List;
 
-/**
- * @author azheng
- * @date 2018/6/4.
- * GitHub：https://github.com/RookieExaminer
- * Email：wei.azheng@foxmail.com
- * Description：登陆
- */
 public class LoginBean {
-
-    /**
-     * collectIds : []
-     * email :
-     * icon :
-     * id : 6300
-     * password : test123321
-     * type : 0
-     * username : test123321
-     */
 
     private String email;
     private String icon;

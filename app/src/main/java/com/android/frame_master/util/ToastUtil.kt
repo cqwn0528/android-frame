@@ -1,8 +1,11 @@
 package com.android.frame_master.util
 
-import com.android.frame_master.data.`fun`.ToastFun
+import com.frame.basic_library.data.`fun`.ToastFun
 
-/**
- * ToastUtils toast 弹框方法
- */
-fun showToast(msg: String) = ToastFun.showToastMsg(msg)
+object ToastUtil {
+    /**
+     * ToastUtils toast 弹框方法
+     */
+    fun showToast(msg: String) = ToastFun.showToastMsg(CtxUtil.getAplContext(), msg)
+}
+
