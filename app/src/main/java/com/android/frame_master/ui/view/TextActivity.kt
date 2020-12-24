@@ -1,9 +1,9 @@
-package com.android.frame_master.user.view
+package com.android.frame_master.ui.view
 
 import com.android.frame_master.R
 import com.frame.basic_library.base.mvp.BaseMvpActivity
-import com.android.frame_master.user.contract.TextContract
-import com.android.frame_master.user.presenter.TextPresenter
+import com.android.frame_master.ui.contract.TextContract
+import com.android.frame_master.ui.presenter.TextPresenter
 import kotlinx.android.synthetic.main.activity_text.*
 
 class TextActivity : BaseMvpActivity<TextPresenter>(), TextContract.View {

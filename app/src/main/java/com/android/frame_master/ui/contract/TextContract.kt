@@ -1,13 +1,13 @@
-package com.android.frame_master.user.contract
+package com.android.frame_master.ui.contract
 
 import com.frame.basic_library.base.mvp.BaseMvpView
-import com.android.frame_master.bean.UserBean
+import com.android.frame_master.ui.bean.TextBean
 import com.frame.basic_library.data.net.HttpCallback
 
 interface TextContract {
 
     interface Model {
-        fun  login(httpCallback: HttpCallback<UserBean>)
+        fun  login(httpCallback: HttpCallback<TextBean>)
     }
 
     interface View : BaseMvpView {

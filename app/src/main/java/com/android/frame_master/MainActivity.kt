@@ -2,7 +2,7 @@ package com.android.frame_master
 
 import android.app.Activity
 import android.os.Bundle
-import com.android.frame_master.bean.UserBean
+import com.android.frame_master.ui.bean.TextBean
 import com.android.frame_master.util.GlideUtil
 import com.android.frame_master.util.HttpUtil
 import com.frame.basic_library.data.net.HttpCallback
@@ -25,8 +25,8 @@ class MainActivity : Activity() {
         }
 
         btn2.setOnClickListener {
-            HttpUtil.getRequest("https://www.baidu.com", object : HttpCallback<UserBean>() {
-                override fun onSuccess(response: UserBean) {
+            HttpUtil.getRequest("https://www.baidu.com", object : HttpCallback<TextBean>() {
+                override fun onSuccess(response: TextBean) {
                 }
 
                 override fun onError(msg: String) {
@@ -35,7 +35,7 @@ class MainActivity : Activity() {
                 override fun onFail() {
 
                 }
-            }, UserBean::class.java)
+            }, TextBean::class.java)
         }
     }
 }
