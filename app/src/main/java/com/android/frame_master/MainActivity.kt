@@ -2,13 +2,18 @@ package com.android.frame_master
 
 import android.app.Activity
 import android.os.Bundle
+import androidx.lifecycle.LifecycleCoroutineScope
 import com.android.frame_master.ui.bean.TextBean
+import com.android.frame_master.util.DataStoreUtil
 import com.android.frame_master.util.GlideUtil
 import com.android.frame_master.util.HttpUtil
 import com.frame.basic_library.data.net.HttpCallback
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : Activity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +26,9 @@ class MainActivity : Activity() {
         )
 
         btn1.setOnClickListener {
-
+            GlobalScope.launch {
+                DataStoreUtil.saveData("", "")
+            }
         }
 
         btn2.setOnClickListener {
