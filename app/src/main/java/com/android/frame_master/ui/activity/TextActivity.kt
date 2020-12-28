@@ -1,4 +1,4 @@
-package com.android.frame_master.ui.view
+package com.android.frame_master.ui.activity
 
 import com.android.frame_master.R
 import com.frame.basic_library.base.mvp.BaseMvpActivity
@@ -9,7 +9,6 @@ import kotlinx.android.synthetic.main.activity_text.*
 class TextActivity : BaseMvpActivity<TextPresenter>(), TextContract.View {
 
     override fun setLayoutId(): Int = R.layout.activity_text
-
 
     override fun initView() {}
 

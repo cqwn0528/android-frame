@@ -7,11 +7,10 @@ import com.frame.basic_library.data.net.HttpCallback
 interface TextContract {
 
     interface Model {
-        fun  login(httpCallback: HttpCallback<TextBean>)
+        fun login(httpCallback: HttpCallback<TextBean>)
     }
 
     interface View : BaseMvpView {
-
     }
 
     interface Presenter {
