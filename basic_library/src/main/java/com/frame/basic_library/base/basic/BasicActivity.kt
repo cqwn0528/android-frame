@@ -17,16 +17,6 @@ abstract class BasicActivity : AppCompatActivity() {
         initListener()
     }
 
-    private fun setStateBar() = BarUtil.stateBarConfig(this, Color.GREEN)
-
-    abstract fun setLayoutId(): Int
-
-    abstract fun initView()
-
-    open fun initData() {}
-
-    open fun initListener() {}
-
     override fun onStart() {
         super.onStart()
         ActMgrUtil.addActivity(this)
@@ -36,4 +26,16 @@ abstract class BasicActivity : AppCompatActivity() {
         super.onDestroy()
         ActMgrUtil.removeActivity(this)
     }
+
+
+    abstract fun setLayoutId(): Int
+
+    open fun initView() {}
+
+    open fun initData() {}
+
+    open fun initListener() {}
+
+    private fun setStateBar() = BarUtil.stateBarConfig(this, Color.GREEN)
+
 }

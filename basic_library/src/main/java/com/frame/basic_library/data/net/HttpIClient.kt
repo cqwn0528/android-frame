@@ -3,7 +3,6 @@ package com.frame.basic_library.data.net
 import okhttp3.*
 import java.util.concurrent.TimeUnit
 
-
 object HttpIClient {
 
     var okHttpClient: OkHttpClient = OkHttpClient().newBuilder().apply {
