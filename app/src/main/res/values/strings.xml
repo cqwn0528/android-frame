@@ -5,4 +5,10 @@
     <string name="pls_enter_password">请输入密码</string>
     <string name="pls_enter_phone_num">请输入手机号</string>
     <string name="pls_enter_identify_code">请输入验证码</string>
+
+    <string name="home_page">首页</string>
+    <string name="home_second">第二</string>
+    <string name="home_third">第三</string>
+    <string name="home_mine">我的</string>
+
 </resources>

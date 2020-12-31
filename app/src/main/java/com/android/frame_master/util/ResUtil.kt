@@ -3,7 +3,7 @@ package com.android.frame_master.util
 import android.graphics.drawable.Drawable
 import androidx.core.content.ContextCompat
 
-object SysResUtil{
+object ResUtil{
     /**
      * 获取 文字资源
      */

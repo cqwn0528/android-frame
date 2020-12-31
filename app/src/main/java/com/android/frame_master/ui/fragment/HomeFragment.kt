@@ -1,5 +1,7 @@
 package com.android.frame_master.ui.fragment
 
- class HomeFragment {
+import com.frame.basic_library.base.basic.BasicFragment
+
+class HomeFragment : BasicFragment() {
 
 }

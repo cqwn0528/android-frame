@@ -31,6 +31,9 @@
             </intent-filter>
         </activity>
         <activity android:name="com.frame.basic_library.base.mvp.BaseMvpActivity" />
+
+        <activity android:name=".ui.activity.HomeFmActivity" />
+
     </application>
 
 </manifest>

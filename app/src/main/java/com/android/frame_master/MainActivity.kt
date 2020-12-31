@@ -1,7 +1,7 @@
 package com.android.frame_master
 
 import android.content.Intent
-import com.android.frame_master.ui.activity.ActivityFragment
+import com.android.frame_master.ui.activity.HomeFmActivity
 import com.android.frame_master.ui.bean.UserBean
 import com.android.frame_master.util.PreDataStore
 import com.frame.basic_library.base.basic.BasicActivity
@@ -35,6 +35,6 @@ class MainActivity : BasicActivity() {
     }
 
     private fun loginInit(userBean: UserBean) {
-       // startActivity(Intent(this, ActivityFragment::class.java))
+        startActivity(Intent(this, HomeFmActivity::class.java))
     }
 }
