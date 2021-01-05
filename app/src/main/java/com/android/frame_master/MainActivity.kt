@@ -1,9 +1,12 @@
 package com.android.frame_master
 
-import android.content.Intent
 import com.android.frame_master.ui.activity.HomeFmActivity
-import com.android.frame_master.ui.bean.UserBean
+import com.android.frame_master.ui.activity.LoginActivity
+import com.android.frame_master.ui.activity.NavigationActivity
+import com.android.frame_master.ui.bean.AppInfoBean
+import com.android.frame_master.util.Constant
 import com.android.frame_master.util.PreDataStore
+import com.android.frame_master.util.SystemUtil
 import com.frame.basic_library.base.basic.BasicActivity
 import com.google.gson.Gson
 import kotlinx.coroutines.*
@@ -17,24 +20,25 @@ class MainActivity : BasicActivity() {
         return R.layout.activity_main
     }
 
-    override fun initView() {
-    }
-
     override fun initData() {
-
         CoroutineScope(Dispatchers.Main).launch {
             //读取数据
-            val s = PreDataStore.getData<String>("1") as String
-            //
-            val userBean = Gson().fromJson(s, UserBean::class.java)
+            val appInfoStr = PreDataStore.getData<String>(Constant.APP_INFO) as String
 
-            delay(1000)
-            //登陆
-            loginInit(userBean)
+            delay(1200)
+
+            if (appInfoStr.isEmpty()) {
+                SystemUtil.startActivity(this@MainActivity, NavigationActivity::class.java)
+            } else {
+                //登陆
+                val appInfoBean = Gson().fromJson(appInfoStr, AppInfoBean::class.java)
+
+                if (appInfoBean.isLogin) {
+                    SystemUtil.startActivity(this@MainActivity, LoginActivity::class.java)
+                } else {
+                    SystemUtil.startActivity(this@MainActivity, HomeFmActivity::class.java)
+                }
+            }
         }
-    }
-
-    private fun loginInit(userBean: UserBean) {
-        startActivity(Intent(this, HomeFmActivity::class.java))
     }
 }

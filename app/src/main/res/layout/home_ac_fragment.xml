@@ -80,7 +80,7 @@
                 android:layout_below="@+id/mTab2Img"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="@string/home_page"
+                android:text="@string/home_second"
                 android:textColor="@color/colorBlack" />
         </RelativeLayout>
 
@@ -111,7 +111,7 @@
                 android:layout_below="@+id/mTab3Img"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="@string/home_second"
+                android:text="@string/home_third"
                 android:textColor="@color/colorBlack" />
         </RelativeLayout>
 
