@@ -8,7 +8,7 @@ import com.android.frame_master.ui.fragment.SecondFragment
 import com.android.frame_master.ui.fragment.ThirdFragment
 import com.android.frame_master.util.ResUtil
 import com.frame.basic_library.base.basic.BasicActivity
-import kotlinx.android.synthetic.main.home_ac_fragment.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFmActivity : BasicActivity() {
 
@@ -20,7 +20,7 @@ class HomeFmActivity : BasicActivity() {
     private lateinit var fragmentTransaction: FragmentTransaction
 
     override fun setLayoutId(): Int {
-        return R.layout.home_ac_fragment
+        return R.layout.fragment_home
     }
 
     override fun initData() {

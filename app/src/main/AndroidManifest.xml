@@ -30,9 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.frame.basic_library.base.mvp.BaseMvpActivity" />
-
         <activity android:name=".ui.activity.HomeFmActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
+        <activity android:name=".ui.activity.NavActivity"/>
 
     </application>
 

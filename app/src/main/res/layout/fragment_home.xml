@@ -35,8 +35,8 @@
 
             <ImageView
                 android:id="@+id/mTab1Img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_centerHorizontal="true"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
@@ -67,8 +67,8 @@
 
             <ImageView
                 android:id="@+id/mTab2Img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_centerHorizontal="true"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/home_tab2_dark" />
@@ -98,8 +98,8 @@
 
             <ImageView
                 android:id="@+id/mTab3Img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_centerHorizontal="true"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/home_tab3_dark" />
@@ -129,8 +129,8 @@
 
             <ImageView
                 android:id="@+id/mTab4Img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_centerHorizontal="true"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/home_tab4_dark" />

@@ -15,7 +15,7 @@ object PreDataStore {
         name = Constant.USER_INFO
     )
 
-    suspend inline fun <reified T : Any> putData(key: String, value: T) {
+    suspend inline fun <reified T : Any> saveData(key: String, value: T) {
         if (T::class == String::class || T::class == Int::class || T::class == Double::class || T::class == Boolean::class || T::class == Long::class || T::class == Float::class) {
             dataStore.edit { it[preferencesKey<T>(key)] = value }
         } else {

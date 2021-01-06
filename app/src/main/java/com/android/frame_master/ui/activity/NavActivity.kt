@@ -7,16 +7,17 @@ import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.android.frame_master.R
-import com.android.frame_master.util.SystemUtil
+import com.android.frame_master.util.AppInfoUtil
+import com.android.frame_master.util.JumpUtil
 import com.frame.basic_library.base.basic.BasicActivity
-import java.util.ArrayList
+import java.util.*
 
 /**
  * Created by Administrator on 2018/1/9
  * <p>
  * 导航
  */
-class NavigationActivity : BasicActivity(), ViewPager.OnPageChangeListener {
+class NavActivity : BasicActivity(), ViewPager.OnPageChangeListener {
 
     private val list = ArrayList<View>()
 
@@ -44,12 +45,11 @@ class NavigationActivity : BasicActivity(), ViewPager.OnPageChangeListener {
     }
 
     /*
-    * *****************************************Btn Listener*****************************************
-    */
+     * *****************************************Btn Listener*****************************************
+     */
     override fun onPageScrollStateChanged(arg0: Int) {}
 
     override fun onPageScrolled(arg0: Int, arg1: Float, arg2: Int) {
-
     }
 
     override fun onPageSelected(arg0: Int) {
@@ -73,14 +73,14 @@ class NavigationActivity : BasicActivity(), ViewPager.OnPageChangeListener {
                 mBtn.setOnClickListener { isFirstLogin() }
             }
             else -> {
+
             }
         }
     }
 
-
     /*
-    * *****************************************Private Method*****************************************
-    */
+     * *****************************************Private Method***************************************
+     */
     private fun clearSelectAll(v: View) {
         val img1 = v.findViewById<View>(R.id.img1) as ImageView
         val img2 = v.findViewById<View>(R.id.img2) as ImageView
@@ -91,7 +91,9 @@ class NavigationActivity : BasicActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun isFirstLogin() {
-        SystemUtil.startActivity(this, LoginActivity::class.java)
+        JumpUtil.jumpTo(this, LoginActivity::class.java)
+        AppInfoUtil.isIntoNav = true
+        AppInfoUtil.saveAppInfo()
         finish()
     }
 

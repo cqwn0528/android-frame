@@ -1,7 +1,7 @@
 package com.android.frame_master.ui.presenter
 
-import com.frame.basic_library.base.mvp.BaseMvpPresenter
 import com.android.frame_master.ui.bean.TextBean
+import com.frame.basic_library.base.mvp.BaseMvpPresenter
 import com.android.frame_master.ui.contract.TextContract
 import com.android.frame_master.ui.contract.TextContract.View
 import com.android.frame_master.ui.model.TextModel
