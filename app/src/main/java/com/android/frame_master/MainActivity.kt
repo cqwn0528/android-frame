@@ -1,5 +1,6 @@
 package com.android.frame_master
 
+import com.android.frame_master.databinding.ActivityMainBinding
 import com.android.frame_master.ui.activity.HomeFmActivity
 import com.android.frame_master.ui.activity.LoginActivity
 import com.android.frame_master.ui.activity.NavActivity
@@ -12,27 +13,25 @@ import kotlinx.coroutines.*
 /**
  * app 初始类
  */
-class MainActivity : BasicActivity() {
-
-    override fun setLayoutId(): Int {
-        return R.layout.activity_main
-    }
+class MainActivity : BasicActivity<ActivityMainBinding>() {
 
     override fun initData() {
         CoroutineScope(Dispatchers.Main).launch {
             //读取数据
             val appInfoStr = PreDataStore.getData<String>(Constant.APP_INFO) as String
             delay(1200)
-            login(appInfoStr)
+            appInit(appInfoStr)
         }
     }
 
-    private fun login(appInfoStr: String) {
+    private fun appInit(appInfoStr: String) {
         if (appInfoStr.isEmpty()) {
             JumpUtil.jumpTo(this@MainActivity, NavActivity::class.java)
         } else {
             //登陆
             val appInfoBean = Gson().fromJson(appInfoStr, AppInfoBean::class.java)
+            AppInfoUtil.isIntoNav = appInfoBean.isIntoNav
+            AppInfoUtil.token = appInfoBean.token
 
             if (appInfoBean.token.isEmpty()) {
                 JumpUtil.jumpTo(this@MainActivity, LoginActivity::class.java)
@@ -40,5 +39,6 @@ class MainActivity : BasicActivity() {
                 JumpUtil.jumpTo(this@MainActivity, HomeFmActivity::class.java)
             }
         }
+        finish()
     }
 }

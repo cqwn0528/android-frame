@@ -2,33 +2,22 @@ package com.frame.basic_library.base.basic
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import com.frame.basic_library.util.ActMgrUtil
+import androidx.viewbinding.ViewBinding
 import com.frame.basic_library.util.BarUtil
+import java.lang.reflect.ParameterizedType
 
-abstract class BasicActivity : AppCompatActivity() {
+open class BasicActivity<VB : ViewBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStateBar()
-        setContentView(setLayoutId())
+        setContentView(binding.root)
         initView()
         initData()
         initListener()
     }
-
-    override fun onStart() {
-        super.onStart()
-        ActMgrUtil.addActivity(this)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        ActMgrUtil.removeActivity(this)
-    }
-
-
-    abstract fun setLayoutId(): Int
 
     open fun initView() {}
 
@@ -36,6 +25,14 @@ abstract class BasicActivity : AppCompatActivity() {
 
     open fun initListener() {}
 
-    private fun setStateBar() = BarUtil.stateBarConfig(this, Color.GREEN)
+    private fun setStateBar() = BarUtil.stateBarConfig(this, Color.WHITE)
 
+
+    protected val binding: VB by lazy {
+        //使用反射得到viewBinding的class
+        val type = javaClass.genericSuperclass as ParameterizedType
+        val aClass = type.actualTypeArguments[0] as Class<*>
+        val method = aClass.getDeclaredMethod("inflate", LayoutInflater::class.java)
+        method.invoke(null, layoutInflater) as VB
+    }
 }

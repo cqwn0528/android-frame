@@ -2,15 +2,15 @@ package com.android.frame_master.ui.activity
 
 import androidx.fragment.app.FragmentTransaction
 import com.android.frame_master.R
+import com.android.frame_master.databinding.ActivityFmHomeBinding
 import com.android.frame_master.ui.fragment.HomeFragment
 import com.android.frame_master.ui.fragment.MyFragment
 import com.android.frame_master.ui.fragment.SecondFragment
 import com.android.frame_master.ui.fragment.ThirdFragment
 import com.android.frame_master.util.ResUtil
 import com.frame.basic_library.base.basic.BasicActivity
-import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFmActivity : BasicActivity() {
+class HomeFmActivity : BasicActivity<ActivityFmHomeBinding>() {
 
     private lateinit var homeFragment: HomeFragment
     private lateinit var secondFragment: SecondFragment
@@ -19,25 +19,21 @@ class HomeFmActivity : BasicActivity() {
 
     private lateinit var fragmentTransaction: FragmentTransaction
 
-    override fun setLayoutId(): Int {
-        return R.layout.fragment_home
-    }
-
     override fun initData() {
-        selectFragmentById(R.id.mTab1Rel)
+        selectFragmentById(binding.mTab1Rel.id)
     }
 
     override fun initListener() {
-        mTab1Rel.setOnClickListener {
+        binding.mTab1Rel.setOnClickListener {
             selectFragmentById(id = it.id)
         }
-        mTab2Rel.setOnClickListener {
+        binding.mTab2Rel.setOnClickListener {
             selectFragmentById(id = it.id)
         }
-        mTab3Rel.setOnClickListener {
+        binding.mTab3Rel.setOnClickListener {
             selectFragmentById(id = it.id)
         }
-        mTab4Rel.setOnClickListener {
+        binding.mTab4Rel.setOnClickListener {
             selectFragmentById(id = it.id)
         }
     }
@@ -57,33 +53,33 @@ class HomeFmActivity : BasicActivity() {
 
     private fun showSelectedFragment(id: Int, ft: FragmentTransaction) {
         when (id) {
-            R.id.mTab1Rel -> if (this::homeFragment.isInitialized) {
+            binding.mTab1Rel.id -> if (this::homeFragment.isInitialized) {
                 ft.show(homeFragment)
             } else {
                 homeFragment = HomeFragment()
-                ft.add(R.id.mHomeGroup, homeFragment)
+                ft.add(binding.mHomeGroup.id, homeFragment)
             }
 
-            R.id.mTab2Rel -> if (this::secondFragment.isInitialized) {
+            binding.mTab2Rel.id -> if (this::secondFragment.isInitialized) {
                 ft.show(secondFragment)
             } else {
                 secondFragment = SecondFragment()
-                ft.add(R.id.mHomeGroup, secondFragment)
+                ft.add(binding.mHomeGroup.id, secondFragment)
             }
 
-            R.id.mTab3Rel -> if (this::thirdFragment.isInitialized) {
+            binding.mTab3Rel.id -> if (this::thirdFragment.isInitialized) {
                 ft.show(thirdFragment)
             } else {
                 thirdFragment = ThirdFragment()
-                ft.add(R.id.mHomeGroup, thirdFragment)
+                ft.add(binding.mHomeGroup.id, thirdFragment)
             }
 
-            R.id.mTab4Rel ->
+            binding.mTab4Rel.id ->
                 if (this::myFragment.isInitialized) {
                     ft.show(myFragment)
                 } else {
                     myFragment = MyFragment()
-                    ft.add(R.id.mHomeGroup, myFragment)
+                    ft.add(binding.mHomeGroup.id, myFragment)
                 }
             else -> {
                 throw IllegalArgumentException("table id error")
@@ -108,33 +104,33 @@ class HomeFmActivity : BasicActivity() {
     }
 
     private fun resetStyle() {
-        mTab1Img.setImageResource(R.drawable.home_tab1_dark)
-        mTab2Img.setImageResource(R.drawable.home_tab2_dark)
-        mTab3Img.setImageResource(R.drawable.home_tab3_dark)
-        mTab4Img.setImageResource(R.drawable.home_tab4_dark)
-        mTab1Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
-        mTab2Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
-        mTab3Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
-        mTab4Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
+        binding.mTab1Img.setImageResource(R.drawable.home_tab1_dark)
+        binding.mTab2Img.setImageResource(R.drawable.home_tab2_dark)
+        binding.mTab3Img.setImageResource(R.drawable.home_tab3_dark)
+        binding.mTab4Img.setImageResource(R.drawable.home_tab4_dark)
+        binding.mTab1Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
+        binding.mTab2Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
+        binding.mTab3Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
+        binding.mTab4Tv.setTextColor(ResUtil.getResColor(R.color.colorBlack))
     }
 
     private fun setTabSelectedStyle(id: Int) {
         when (id) {
-            R.id.mTab1Rel -> {
-                mTab1Img.setImageResource(R.drawable.home_tab1_light)
-                mTab1Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
+            binding.mTab1Rel.id -> {
+                binding.mTab1Img.setImageResource(R.drawable.home_tab1_light)
+                binding.mTab1Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
             }
-            R.id.mTab2Rel -> {
-                mTab2Img.setImageResource(R.drawable.home_tab2_light)
-                mTab2Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
+            binding.mTab2Rel.id -> {
+                binding.mTab2Img.setImageResource(R.drawable.home_tab2_light)
+                binding.mTab2Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
             }
-            R.id.mTab3Rel -> {
-                mTab3Img.setImageResource(R.drawable.home_tab3_light)
-                mTab3Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
+            binding.mTab3Rel.id -> {
+                binding.mTab3Img.setImageResource(R.drawable.home_tab3_light)
+                binding.mTab3Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
             }
-            R.id.mTab4Rel -> {
-                mTab4Img.setImageResource(R.drawable.home_tab4_light)
-                mTab4Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
+            binding.mTab4Rel.id -> {
+                binding.mTab4Img.setImageResource(R.drawable.home_tab4_light)
+                binding.mTab4Tv.setTextColor(ResUtil.getResColor(R.color.colorPrimary))
             }
             else -> {
                 throw IllegalArgumentException("table id error")

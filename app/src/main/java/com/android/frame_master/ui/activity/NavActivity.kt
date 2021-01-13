@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.android.frame_master.R
+import com.android.frame_master.databinding.ActivityNavigationBinding
 import com.android.frame_master.util.AppInfoUtil
 import com.android.frame_master.util.JumpUtil
 import com.frame.basic_library.base.basic.BasicActivity
@@ -17,13 +18,9 @@ import java.util.*
  * <p>
  * 导航
  */
-class NavActivity : BasicActivity(), ViewPager.OnPageChangeListener {
+class NavActivity : BasicActivity<ActivityNavigationBinding>(), ViewPager.OnPageChangeListener {
 
     private val list = ArrayList<View>()
-
-    override fun setLayoutId(): Int {
-        return R.layout.activity_navigation
-    }
 
     override fun initView() {
         val pager = findViewById<ViewPager>(R.id.LoginPager)
@@ -45,8 +42,9 @@ class NavActivity : BasicActivity(), ViewPager.OnPageChangeListener {
     }
 
     /*
-     * *****************************************Btn Listener*****************************************
+     * *****************************************Btn Listener****************************************
      */
+
     override fun onPageScrollStateChanged(arg0: Int) {}
 
     override fun onPageScrolled(arg0: Int, arg1: Float, arg2: Int) {
@@ -79,8 +77,9 @@ class NavActivity : BasicActivity(), ViewPager.OnPageChangeListener {
     }
 
     /*
-     * *****************************************Private Method***************************************
+     * *****************************************Private Method**************************************
      */
+
     private fun clearSelectAll(v: View) {
         val img1 = v.findViewById<View>(R.id.img1) as ImageView
         val img2 = v.findViewById<View>(R.id.img2) as ImageView
