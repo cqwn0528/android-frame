@@ -3,6 +3,7 @@
     package="com.android.frame_master">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".application.MyApplication"

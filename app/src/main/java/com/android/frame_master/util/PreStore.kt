@@ -8,7 +8,7 @@ import androidx.datastore.preferences.createDataStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
-object PreDataStore {
+object PreStore {
 
     // 创建dataStore
     var dataStore: DataStore<Preferences> = CtxUtil.getAplContext().createDataStore(

@@ -10,6 +10,7 @@ import com.frame.basic_library.base.basic.BasicActivity
 import com.google.gson.Gson
 import kotlinx.coroutines.*
 
+
 /**
  * app 初始类
  */
@@ -18,7 +19,7 @@ class MainActivity : BasicActivity<ActivityMainBinding>() {
     override fun initData() {
         CoroutineScope(Dispatchers.Main).launch {
             //读取数据
-            val appInfoStr = PreDataStore.getData<String>(Constant.APP_INFO) as String
+            val appInfoStr = PreStore.getData<String>(Constant.APP_INFO) as String
             delay(1200)
             appInit(appInfoStr)
         }

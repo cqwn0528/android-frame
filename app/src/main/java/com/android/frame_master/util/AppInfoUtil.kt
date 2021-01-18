@@ -17,7 +17,7 @@ object AppInfoUtil {
             appInfoBean.isIntoNav = isIntoNav
             appInfoBean.token = token
             val userInfoStr = Gson().toJson(AppInfoBean())
-            PreDataStore.saveData(Constant.APP_INFO, userInfoStr)
+            PreStore.saveData(Constant.APP_INFO, userInfoStr)
         }
     }
 }

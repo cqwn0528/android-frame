@@ -72,11 +72,14 @@ dependencies {
     //share
     api "androidx.datastore:datastore-preferences:1.0.0-alpha05"
     api "androidx.datastore:datastore-preferences-core:1.0.0-alpha05"
+
     //proto
     api "androidx.datastore:datastore:1.0.0-alpha05"
     api "androidx.datastore:datastore-core:1.0.0-alpha05"
-
     api 'androidx.core:core-ktx:1.5.0-alpha05'
+
+    //permission
+  //  api 'com.github.tbruyelle:rxpermissions:0.12'
 
     //room
     testImplementation "androidx.room:room-testing:$room_version"
