@@ -17,12 +17,7 @@ import kotlinx.coroutines.*
 class MainActivity : BasicActivity<ActivityMainBinding>() {
 
     override fun initData() {
-        CoroutineScope(Dispatchers.Main).launch {
-            //读取数据
-            val appInfoStr = PreStore.getData<String>(Constant.APP_INFO) as String
-            delay(1200)
-            appInit(appInfoStr)
-        }
+
     }
 
     private fun appInit(appInfoStr: String) {

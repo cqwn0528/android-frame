@@ -11,7 +11,6 @@ class MyApplication : BasicApplication() {
     }
 
     companion object {
-        private var instance: MyApplication by Delegates.notNull()
-        fun instance() = instance
+       lateinit var instance: MyApplication
     }
 }

@@ -1,3 +1,4 @@
+/*
 package com.frame.basic_library.data.db
 
 import androidx.room.*
@@ -22,4 +23,4 @@ interface UserDao {
 
     @Update
     fun updateUsers(vararg users: User)
-}
+}*/

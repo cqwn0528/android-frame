@@ -1,3 +1,4 @@
+/*
 package com.frame.basic_library.data.db
 
 import androidx.room.ColumnInfo
@@ -10,3 +11,4 @@ data class User(
     @ColumnInfo(name = "first_name") val firstName: String?,
     @ColumnInfo(name = "last_name") val lastName: String?
 )
+*/

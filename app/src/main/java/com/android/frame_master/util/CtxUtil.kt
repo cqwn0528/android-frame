@@ -7,6 +7,6 @@ object CtxUtil {
     /**
      * Application 上下文
      */
-    fun getAplContext(): Context = MyApplication.instance().applicationContext
+    fun getAplContext(): Context = MyApplication.instance.applicationContext
 }
 
